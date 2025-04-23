@@ -5,9 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="shortcut icon" href="#" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap"
+            rel="stylesheet"
+        />
         <title>Tic Tac Toe</title>
     </head>
     <body>
+        <div class="page-wrapper">
+            <div id="gameboard" class="board"></div>
+            <div class="panel">
+                <h1>Tic Tac Toe</h1>
+                <div class="players">
+                    <div class="player current-player" id="player1">
+                        <div class="score" id="player1-score">0</div>
+                        <span class="p-symbol" id="p1-symbol">X</span>
+                        <span class="name">Player 1</span>
+                    </div>
+                    <div class="player" id="player2">
+                        <div class="score" id="player2-score">0</div>
+                        <span class="p-symbol" id="p2-symbol">O</span>
+                        <span class="name">Player 2</span>
+                    </div>
+                </div>
+                <div id="message"></div>
+                <div id="button-group">
+                    <button disabled id="nextBtn">Next Round</button>
+                    <button disabled id="restartBtn">Restart</button>
+                </div>
+            </div>
+        </div>
+
         <script src="game.js"></script>
     </body>
 </html>
