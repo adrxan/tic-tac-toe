@@ -1,0 +1,183 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: var(--bg-color);
+    color: var(--text-color);
+    user-select: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-feature-settings:
+        "liga" 1,
+        "calt" 1;
+    --bg-color: #030303;
+    --mid-color: #121212;
+    --fg-color: #242424;
+    --outline-color: #3a3a3a;
+    --title-color: #e2e2e2;
+    --text-color: #aeaeae;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+.page-wrapper {
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 24px;
+    gap: 24px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.cell {
+    background-color: var(--fg-color);
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    border: 1px solid var(--outline-color);
+    font-size: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.panel {
+    min-width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+h1 {
+    font-weight: bold;
+    color: var(--title-color);
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 16px;
+}
+
+.player {
+    background-color: var(--mid-color);
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.current-player {
+    border: 2px solid var(--outline-color);
+}
+
+.score {
+    font-feature-settings:
+        "zero" 1,
+        "ss01" 1;
+    color: var(--title-color);
+    font-size: 2.4em;
+    font-weight: 500;
+    padding: 8px;
+}
+
+.p-symbol {
+    margin-right: 4px;
+    padding: 0px 8px;
+    border: 1px solid var(--outline-color);
+    border-radius: 4px;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-style: normal;
+    text-align: center;
+}
+
+#message {
+    background-color: var(--mid-color);
+    height: 52px;
+    border-radius: 8px;
+    padding: 16px 16px;
+    margin: 8px 0px;
+}
+
+button {
+    background-color: var(--fg-color);
+    border: var(--outline-color);
+    color: var(--title-color);
+    border-radius: 4px;
+    padding: 4px 16px;
+    font-weight: 450;
+    border: 1px solid var(--outline-color);
+    cursor: pointer;
+}
+
+#nextBtn {
+    background-color: var(--title-color);
+    color: var(--bg-color);
+    border: 1px solid var(--fg-color);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.1;
+}
